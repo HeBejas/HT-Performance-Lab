@@ -1,6 +1,6 @@
 import statistics
 
-filename = input('Введитье название файла - ')
+filename = input('Введите название файла - ')
 with open(filename, 'r') as file:
     numbers = file.readlines()
     numbers = [number.strip() for number in numbers]
