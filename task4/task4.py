@@ -1,6 +1,12 @@
 import statistics
+import sys
 
-filename = input('Введите название файла - ')
+if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        print('Неверное количество аргументов')
+    else:
+        filename = sys.argv[1]
+
 with open(filename, 'r') as file:
     numbers = file.readlines()
     numbers = [number.strip() for number in numbers]

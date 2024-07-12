@@ -1,32 +1,25 @@
-def factorial( n ):
-    if n == 0:
-        return 1
+import sys
+if __name__ == '__main__':
+    if len(sys.argv) != 3:
+        print('Неверное количество аргументов')
     else:
-        result = ''
-        for i in range(1, n + 1):
-            result += str(i)
-        return result
+        n = int(sys.argv[1])
+        m = int(sys.argv[2])
+  
+array = [i for i in range(1, n + 1)]
+m -= 1
+position = 0
+result = '1'
 
-n = int(input('Введите n: '))
-m = int(input('Введите m: '))    
-array = factorial(n)
+while(True):
+    position += m
+    step = array[position % n]
+    if step == 1:
+        break
+    else:
+        result += str(step)
+print(result)
+        
 
-if n == m:
-    print('n не может быть равен m')
-if n < 2:
-    print('n не может быть меньше 2')
-else:
-    answer = ''
-    i = 0
-    while(True):
-        step = array[i:m+i]
-        answer += step[0]
-        i += m-1
-        array += array
-        if step[-1] == '1': 
-            break
-    print(answer)
-
-input()
 
 
