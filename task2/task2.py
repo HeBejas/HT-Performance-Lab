@@ -1,5 +1,14 @@
-input_circle = open('circle.txt', 'r').readlines()
-input_dot = open('dot.txt', 'r').readlines()
+import sys
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Неверное количество аргументов")
+    else:
+        circle_file = sys.argv[1]
+        dot_file = sys.argv[2]
+        
+input_circle = open(circle_file, 'r').readlines()
+input_dot = open(dot_file, 'r').readlines()
 
 circleR = int(input_circle[1])
 circleY = int(input_circle[0].split()[0])
@@ -19,4 +28,4 @@ for i in range( len(input_dot) ):
     elif calc > circleR**2:
         print(2)
         continue
-input()
+
